@@ -1,0 +1,508 @@
+@import "bourbon/bourbon"
+@import "skins/tomato.sass"
+
+body
+	font-family: "Raleway", sans-serif
+	font-weight: normal
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.42857
+	color: #fff
+	overflow-x: hidden
+	+kerning(1)
+	-webkit-font-smoothing: antialised
+	/*&.overf
+		overflow: hidden*/
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: red
+body input:required:valid,
+body textarea:required:valid
+	color: green
+
+.bold
+	font-weight: 900
+
+h1
+	color: #fff
+	font-size: 3em
+
+h2
+	color: #1f2932
+	font-size: 2.5em
+	font-family: $exo
+	margin: 0
+	padding: 0
+	text-align: center
+
+h3
+	color: #fff
+	text-transform: uppercase
+	font-size: 1.5em
+	font-weight: 400
+	font-family: $montserrat
+	+kerning(2)
+	&.project_name
+		text-transform: capitalize
+		padding-bottom: 25px
+		font-size: 1.313em
+		+kerning(1)
+		+duration(2s)
+
+h4
+	font-size: 1.063em
+	font-weight: 400
+	font-family: $montserrat
+	&.project_tags
+		+delay(1.5s)
+		+duration(4s)
+	&.fadeOutUp
+		+delay(.1s)
+		+duration(.3s)
+
+h5
+	font-weight: 600
+
+q
+	quotes: "\201c" "\201d"
+
+a
+	color: #000
+	&:hover, &:focus, &:active
+		color: #000
+
+section
+	padding: 65px 0	
+
+.gutters
+	margin-right: 0
+	margin-left: 0
+	> .col,
+	> [class*="col-"] 
+		padding-right: 0
+		padding-left: 0
+
+.hidden
+	display: none
+
+section, header
+	position: relative
+
+.opacity
+	opacity: 0.9
+	+transition(all 0.3s ease)
+	
+//header
+.main_head
+	background-image: url(../img/portfolio_bg.jpg)
+	background-size: cover
+	background-position: top center
+	min-height: 100vh
+
+.main_head, .h_bike
+	min-height: 620px
+	.logo_container
+		float: left
+		padding: 45px 0 0 50px
+		z-index: 100
+		svg
+			position: fixed
+			float: left
+			height: 55px
+			width: 100px
+			display: block
+			z-index: 100
+			path
+				fill: #fff
+	.autor
+		z-index: 100
+		position: absolute
+		top: 30px
+		left: 50%
+		transform: translate(-50%, -50%)
+
+.toggle_menu
+	padding: 0
+	width: 60px
+	height: 60px
+	float: right
+	position: fixed
+	z-index: 100
+	border: none
+	right: 50px
+	top: 41px
+	background-color: transparent
+	span
+		display: block
+
+.top_menu
+	position: fixed
+	width: 100%
+	font-weight: 600
+	height: 100%
+	background-color: rgba(0,0,0,0.9)
+	z-index: 50
+	right: 0
+	top: 0
+	visibility: hidden
+
+.top_menu.active
+	visibility: visible
+
+.top_menu > 
+	ul > 
+		li
+			list-style-type: none
+			padding: 0
+			margin: 0
+	ul
+		padding: 150px 0 0 
+		text-align: center
+		li
+			&:nth-child(1) a
+				+duration(0.4s)
+			&:nth-child(2) a
+				+duration(0.8s)
+			&:nth-child(3) a
+				+duration(1.2s)
+			&:nth-child(4) a
+				+duration(1.6s)
+		a
+			color: #fff
+			display: block
+			padding: 20px 0
+			text-transform: uppercase
+			font-size: 2.5em
+			text-decoration: none
+			font-family: $montserrat
+			font-weight: 700
+			+kerning(3)
+			
+.header_content
+	transform: translate(-50%, -50%)
+	position: absolute
+	top: 75%
+	left: 50%
+	text-align: center
+	z-index: 5
+	img
+		width: 1000px
+		
+//footer .others
+.others
+	position: relative
+	text-align: center
+	min-height: 280px
+	height: 100%
+	display: block
+	overflow: hidden
+	transition: .5s
+	a
+		z-index: 10
+		display: block
+		height: 34px
+		border-radius: none
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	img
+		transition: .7s ease-out
+		width: 50%
+	.artwork
+		background-image: url(../img/artwork_bg.jpg)
+		background-position: center center
+		&:hover
+			img
+				z-index: 1
+				transform: scale(1.2)
+	.tlc
+		background-image: url(../img/tlc_bg.png)
+		background-position: center center
+		&:hover
+			img
+				z-index: 1
+				transform: scale(1.2)
+
+.artwork.active, .tlc.active
+	z-index: 10
+	position: relative
+	display: block
+	
+
+//portfolio section bike
+.s_bike, .h_bike, .project_page
+	background-image: url(../img/bike_bg.jpg)
+	background-size: cover
+	background-position: top center
+	background-attachment: fixed
+	min-height: 100vh
+	text-align: center
+	img
+		width: 50%
+
+.h_bike
+	img
+		position: fixed
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	.text_wrapper
+		position: fixed
+		left: 50%
+		transform: translateX(-50%)
+
+.project_page.active, .h_bike.active
+	background-color: rgba(0,0,0,.9)
+
+.shadow
+	position: fixed
+	width: 100%
+	height: 100%
+	background-color: rgba(0,0,0,.8)
+	z-index: 5
+	right: 0
+	top: 0
+	visibility: hidden
+
+.shadow.active
+	visibility: visible
+
+//section project_page
+.project_page
+	text-align: center
+	img
+		z-index: 6
+		position: relative
+		padding: 80px 0
+		width: 100%
+		&.screens
+			width: 70%
+		&.mobile
+			width: 45%
+		&.main_page
+			width: 95%
+
+.owl-carousel
+	position: relative
+	z-index: 6
+	img
+		padding: 0
+		margin: 80px 0
+	.owl-nav.active
+		display: none
+	.owl-nav
+		.owl-prev
+			left: 20px
+			position: absolute
+			top: 50%
+		.owl-next
+			right: 20px
+			position: absolute
+			top: 50%
+		.fa
+			font-size: 50px
+	.owl-item:nth-child(even)
+		img
+			width: 120%
+	.owl-item:nth-child(odd)
+		position: relative
+		img
+			top: -30px
+			right: -30px
+
+.mfp-title
+	display: none
+
+img.mfp-img
+	padding: 0
+
+//loader
+.loader
+	background: none repeat scroll 0 0 #ffffff
+	bottom: 0
+	height: 100%
+	left: 0
+	position: fixed
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 9999
+	.loader_inner
+		background-image: url("../img/preloader.gif")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+		background-color: #fff
+		height: 120px
+		width: 120px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute
+
+//toggle menu
+$w: 35px
+$h: 3px
+
+.sandwich 
+	z-index: 101
+	width: $w
+	height: $w
+	position: absolute
+	top: 18px
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
+
+.sw-topper
+	position: relative
+	top: 0
+	width: $w 
+	height: $h
+	background: #fff
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+
+.sw-bottom
+	position: relative
+	width: $w
+	height: $h
+	top: 5px
+	background: #fff
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	transition-delay: 0.2s, 0s
+
+.sw-footer
+	position: relative
+	width: $w
+	height: $h
+	top: 10px
+	background: #fff
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: all 0.5s
+	transition-delay: 0.1s
+
+.sandwich.active 
+	.sw-topper
+		top: 8px
+		transform: rotate(140deg)
+	.sw-bottom
+		top: 5px
+		transform: rotate(-140deg)
+	.sw-footer
+		opacity: 0
+		top: 0
+		transform: rotate(180deg)
+
+//DownButton
+.scroll 
+	position: absolute
+	z-index: 10
+	bottom: 50px
+	left: 105px
+	a
+		color: #fff
+		position: fixed
+		padding-top: 38px
+		z-index: 10
+		display: inline-block
+		transform: translate(-50%, -50%)
+		text-decoration: none
+		transition: opacity .3s
+		font-size: 0.75em
+		&:hover 
+			color: #fff
+			opacity: .5
+
+.scroll a span 
+	position: absolute
+	top: 0
+	left: 50%
+	width: 18px
+	height: 18px
+	margin-left: -9px
+	border-left: 1px solid #fff
+	border-bottom: 1px solid #fff
+	-webkit-transform: rotate(-45deg)
+	transform: rotate(-45deg)
+	-webkit-animation: sdb04 2s infinite
+	animation: sdb04 2s infinite 
+	box-sizing: border-box
+	@-webkit-keyframes sdb04
+		0%
+			-webkit-transform: rotate(-45deg) translate(0, 0)
+		20% 
+			-webkit-transform: rotate(-45deg) translate(-10px, 10px)
+		40%
+			-webkit-transform: rotate(-45deg) translate(0, 0)
+	@keyframes sdb04
+		0%
+			transform: rotate(-45deg) translate(0, 0)
+		20%
+			transform: rotate(-45deg) translate(-10px, 10px)
+		40% 
+			transform: rotate(-45deg) translate(0, 0)
+
+//Back to top
+.top
+	position: fixed
+	+mt(.7s)
+	bottom: -130px
+	right: 62px
+	width: 35px
+	height: 35px
+	line-height: 40px
+	background-color: #114A44
+	color: #fff
+	border-radius: 50%
+	cursor: pointer
+	text-align: center
+	z-index: 1000
+	.fa
+		top: -2px
+		font-size: 19px
+		color: #fff
+		position: relative
+		display: inline-block
+	&:hover
+		background-color: lighten(#114A44, 10%)
+	&.active
+		bottom: 25px
+
+//Button hover effect
+.slide
+	&:hover, &:focus, &:active
+		box-shadow: inset 15em 0 0 0 #fff
+
+a.button
+	font-family: $montserrat	
+	margin: 0 auto
+	width: 150px
+	display: block
+	color: #fff
+	text-transform: uppercase
+	transition: 0.35s
+	&:hover, &:focus, &:active
+		border-color: #fff
+		color: #000
+		text-decoration: none
+		font-weight: 700
+	background: none
+	border: 1px solid #fff
+	line-height: 25px
+	padding: 3px
+	font-size: 0.75em
+	cursor: pointer
+	bottom: 0
+	+kerning(1)
+
+@import "media"
