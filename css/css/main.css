@@ -105,22 +105,8 @@ section, header {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }
 
-.h_contact .header_content img {
-  width: 900px; }
-.h_contact .header_content ul {
-  padding-top: 30px; }
-  .h_contact .header_content ul li {
-    padding-right: 70px;
-    list-style: none;
-    display: inline-block; }
-    .h_contact .header_content ul li a {
-      vertical-align: super;
-      color: #fff; }
-      .h_contact .header_content ul li a:hover {
-        text-decoration: none; }
-    .h_contact .header_content ul li .fa {
-      font-size: 26px;
-      padding-right: 5px; }
+.h_contact img {
+  width: 100px; }
 
 .main_head {
   background-image: url(../img/portfolio_bg.jpg);
