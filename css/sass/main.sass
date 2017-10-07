@@ -12,8 +12,9 @@ body
 	overflow-x: hidden
 	+kerning(1)
 	-webkit-font-smoothing: antialised
-	/*&.overf
-		overflow: hidden*/
+
+.body_overflow
+	overflow: hidden
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
@@ -50,6 +51,7 @@ h3
 		font-size: 1.313em
 		+kerning(1)
 		+duration(2s)
+	
 
 h4
 	font-size: 1.063em
@@ -61,6 +63,13 @@ h4
 	&.fadeOutUp
 		+delay(.1s)
 		+duration(.3s)
+	&.category
+		font-size: 1.125em
+		font-weight: 400
+		text-transform: uppercase
+		color: #525661
+		margin-bottom: 40px
+		margin-left: 40px
 
 h5
 	font-weight: 600
@@ -69,9 +78,12 @@ q
 	quotes: "\201c" "\201d"
 
 a
-	color: #000
+	color: #fff
 	&:hover, &:focus, &:active
-		color: #000
+		color: #fff
+		text-decoration: none
+	&.social
+		font-size: 0.75em
 
 section
 	padding: 65px 0	
@@ -106,20 +118,57 @@ section, header
 				display: inline-block
 				a
 					vertical-align: super
-					color: #fff
-					&:hover
-						text-decoration: none
 				.fa
 					font-size: 26px
 					padding-right: 5px
 		
+//about me
+.h_about
+	.header_content
+		position: fixed
+		z-index: 1
+		img
+			width: 800px
+	.row
+		.fixed
+			position: fixed
+			top: 30px
+			left: 50%
+			transform: translate(-50%, -50%)
+
+.s_experience, .s_about
+	padding-top: 200px
+	.category_info, .category_wrapper
+		z-index: 10
+	ul
+		list-style-type: none
+		
+		li
+			margin-bottom: 7px
+	.name
+		font-size: 0.7em
+		color: #c2c2c2
+		position: relative
+	.data
+		font-size: 0.9em
+		color: #fff
+		ul
+			padding: 0
+			li
+				margin: 0
+	span.super
+		vertical-align: super
+		padding-left: 10px
+	.fa
+		font-size: 26px
 
 //header
-.main_head
+.main_head, .s_experience, .s_about
 	background-image: url(../img/portfolio_bg.jpg)
 	background-size: cover
 	background-position: top center
 	min-height: 100vh
+	background-attachment: fixed
 
 .main_head, .h_bike
 	min-height: 620px
@@ -274,9 +323,6 @@ section, header
 		left: 50%
 		transform: translateX(-50%)
 
-.project_page.active, .h_bike.active
-	background-color: rgba(0,0,0,.9)
-
 .shadow
 	position: fixed
 	width: 100%
@@ -341,7 +387,7 @@ img.mfp-img
 
 //loader
 .loader
-	background: none repeat scroll 0 0 #ffffff
+	background: none repeat scroll 0 0 #101010
 	bottom: 0
 	height: 100%
 	left: 0
@@ -430,7 +476,6 @@ $h: 3px
 	bottom: 50px
 	left: 105px
 	a
-		color: #fff
 		position: fixed
 		padding-top: 38px
 		z-index: 10
@@ -524,5 +569,13 @@ a.button
 	cursor: pointer
 	bottom: 0
 	+kerning(1)
+
+///////////////////////////////////////
+.form
+	
+.form__label
+	color: #000
+
+	
 
 @import "media"

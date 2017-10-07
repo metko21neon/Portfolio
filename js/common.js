@@ -110,6 +110,10 @@ $(document).ready(function() {
 	  });
 	});
 	
+	
+	//to top
+	$("body").append('<div class="top"><i class="fa fa-angle-up">');
+	
 	$("body").on("click", ".top", function(){
         $("html, body").animate({scrollTop: 0},"slow");
     });
@@ -126,8 +130,10 @@ $(document).ready(function() {
             $(".text_wrapper").animated("zoomIn");
         }    
     });
-    
-    $("body").append('<div class="top"><i class="fa fa-angle-up">');
+	
+	//form
+	$("input, select, textarea").not("[type=submit]").jqBootstrapValidation();
+
 });
 
 $(window).load(function () {

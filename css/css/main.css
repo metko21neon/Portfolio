@@ -9,9 +9,10 @@ body {
   color: #fff;
   overflow-x: hidden;
   letter-spacing: 1px;
-  -webkit-font-smoothing: antialised;
-  /*&.overf
-   * overflow: hidden */ }
+  -webkit-font-smoothing: antialised; }
+
+.body_overflow {
+  overflow: hidden; }
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
@@ -70,6 +71,13 @@ h4 {
     -webkit-animation-duration: 0.3s;
     -moz-animation-duration: 0.3s;
     animation-duration: 0.3s; }
+  h4.category {
+    font-size: 1.125em;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #525661;
+    margin-bottom: 40px;
+    margin-left: 40px; }
 
 h5 {
   font-weight: 600; }
@@ -78,9 +86,12 @@ q {
   quotes: "“" "”"; }
 
 a {
-  color: #000; }
+  color: #fff; }
   a:hover, a:focus, a:active {
-    color: #000; }
+    color: #fff;
+    text-decoration: none; }
+  a.social {
+    font-size: 0.75em; }
 
 section {
   padding: 65px 0; }
@@ -105,14 +116,62 @@ section, header {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease; }
 
-.h_contact img {
-  width: 100px; }
+.h_contact .header_content img {
+  width: 900px; }
+.h_contact .header_content ul {
+  padding-top: 30px; }
+  .h_contact .header_content ul li {
+    padding-right: 70px;
+    list-style: none;
+    display: inline-block; }
+    .h_contact .header_content ul li a {
+      vertical-align: super; }
+    .h_contact .header_content ul li .fa {
+      font-size: 26px;
+      padding-right: 5px; }
 
-.main_head {
+.h_about .header_content {
+  position: fixed;
+  z-index: 1; }
+  .h_about .header_content img {
+    width: 800px; }
+.h_about .row .fixed {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.s_experience, .s_about {
+  padding-top: 200px; }
+  .s_experience .category_info, .s_experience .category_wrapper, .s_about .category_info, .s_about .category_wrapper {
+    z-index: 10; }
+  .s_experience ul, .s_about ul {
+    list-style-type: none; }
+    .s_experience ul li, .s_about ul li {
+      margin-bottom: 7px; }
+  .s_experience .name, .s_about .name {
+    font-size: 0.7em;
+    color: #c2c2c2;
+    position: relative; }
+  .s_experience .data, .s_about .data {
+    font-size: 0.9em;
+    color: #fff; }
+    .s_experience .data ul, .s_about .data ul {
+      padding: 0; }
+      .s_experience .data ul li, .s_about .data ul li {
+        margin: 0; }
+  .s_experience span.super, .s_about span.super {
+    vertical-align: super;
+    padding-left: 10px; }
+  .s_experience .fa, .s_about .fa {
+    font-size: 26px; }
+
+.main_head, .s_experience, .s_about {
   background-image: url(../img/portfolio_bg.jpg);
   background-size: cover;
   background-position: top center;
-  min-height: 100vh; }
+  min-height: 100vh;
+  background-attachment: fixed; }
 
 .main_head, .h_bike {
   min-height: 620px; }
@@ -266,9 +325,6 @@ section, header {
   left: 50%;
   transform: translateX(-50%); }
 
-.project_page.active, .h_bike.active {
-  background-color: rgba(0, 0, 0, 0.9); }
-
 .shadow {
   position: fixed;
   width: 100%;
@@ -329,7 +385,7 @@ img.mfp-img {
   padding: 0; }
 
 .loader {
-  background: none repeat scroll 0 0 #ffffff;
+  background: none repeat scroll 0 0 #101010;
   bottom: 0;
   height: 100%;
   left: 0;
@@ -412,7 +468,6 @@ img.mfp-img {
   bottom: 50px;
   left: 105px; }
   .scroll a {
-    color: #fff;
     position: fixed;
     padding-top: 38px;
     z-index: 10;
@@ -502,6 +557,12 @@ a.button {
     color: #000;
     text-decoration: none;
     font-weight: 700; }
+
+.form__label {
+  color: #000; }
+
+label {
+  color: #000; }
 
 /*==========  Desktop First  ========== */
 /* Large Devices, Wide Screens */
