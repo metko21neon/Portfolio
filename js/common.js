@@ -1,12 +1,8 @@
 $(document).ready(function() {
 	
 	//animations	
-	$(".project_name").animated("bounceInUp");
-	$(".project_tags").animated("fadeIn");
-	
-	$("img").hover(function() {
-		$(".project_img").toggleClass("bounce animated");
-	});
+	$(".project__name").animated("bounceInUp");
+	$(".project__tags").animated("fadeIn");
 	
 	//scrolify
 	$.scrollify({
@@ -16,31 +12,28 @@ $(document).ready(function() {
 	});
 	
 	//others
-	$("a.prev").hover(function() {
-		$(".artwork").toggleClass("active");
+	$(".others__link_prev").hover(function() {
+		$(".others__previous").toggleClass("others_active");
 	});
-	$("a.next").hover(function() {
-		$(".tlc").toggleClass("active");
+	$(".others__link_next").hover(function() {
+		$(".others__next").toggleClass("others_active");
 	});
 	
 	//owl-carousel
 	$('.owl-carousel').owlCarousel({
 		items: 4,
 		nav: true,
-		navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+		navText: ["<i class='owl-carousel__icon fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
         responsiveClass:true,
         responsive:{
             0:{
-                items:1,
-            },
-            520:{
                 items:1,
             },
             560:{
                 items:2,
             },
             768:{
-                items:2,
+                items:3,
             },
             992:{
                 items:3,
@@ -76,28 +69,32 @@ $(document).ready(function() {
 		}
 		
 	});
-
-	//heightDetect
-	function heightDetect() {
-		$(".main_head").css("height", $(window).height())
-	}
-	heightDetect();
-	
-	$(window).resize(function() {
-		heightDetect();
-	});
 	
 	//toggle_menu
+	$(".toggle-menu__button").click(function() {
+		$(".toggle-menu").toggleClass("active");
+		$(".menu").toggleClass("menu_active");
+		$(".menu__link").toggleClass("fadeInUp animated");
+	});
+	
 	$(".toggle_menu").click(function() {
 		$(".sandwich").toggleClass("active");
+		$(".toggle-menu").toggleClass("active");
 		$(".top_menu").toggleClass("active");
+		$(".menu").toggleClass("menu_active");
 		$(".header_content").toggleClass("opacity");
 		$(".top_menu li a").toggleClass("fadeInUp animated");
 	});
 	
 	//menu
+	$(".menu__link").click(function() {
+		$(".menu").toggleClass("menu_active");
+		$(".toggle-menu").toggleClass("active");
+	});
+	
 	$(".top_menu ul li a").click(function() {
 		$(".top_menu").toggleClass("active");
+		$(".menu").toggleClass("menu_active");
 		$(".sandwich").toggleClass("active");
 		$(".header_content").toggleClass("opacity");
 	});
@@ -112,31 +109,36 @@ $(document).ready(function() {
 	
 	
 	//to top
-	$("body").append('<div class="top"><i class="fa fa-angle-up">');
+	$("body").append('<div class="top"><i class="top__icon fa fa-angle-up">');
 	
 	$("body").on("click", ".top", function(){
-        $("html, body").animate({scrollTop: 0},"slow");
+        $("html, body").animate({scrollTop: 0}, 2500, 'easeInExpo');
     });
     
     $(window).scroll(function() {
         if ($(this).scrollTop() > 10) {
             $(".top").addClass("active");
             $(".shadow").addClass("active");
-            $(".text_wrapper").animated("zoomOut");
+            $(".project__name_animation").animated("zoomOut");
+            $(".project__tags_animation").animated("zoomOut");
         } else {
             $(".top").removeClass("active");
             $(".shadow").removeClass("active");
-            $(".text_wrapper").removeClass("zoomOut");
-            $(".text_wrapper").animated("zoomIn");
+            $(".project__name_animation").removeClass("zoomOut");
+            $(".project__name_animation").animated("zoomIn");
+			$(".project__tags_animation").removeClass("zoomOut");
+            $(".project__tags_animation").animated("zoomIn");
         }    
     });
-	
-	//form
-	$("input, select, textarea").not("[type=submit]").jqBootstrapValidation();
 
 });
 
 $(window).load(function () {
     $(".loader_inner").fadeOut();
+    $(".loader").delay(400).fadeOut("slow");
+});
+
+$(window).load(function () {
+    $(".loader__inner").fadeOut();
     $(".loader").delay(400).fadeOut("slow");
 });
